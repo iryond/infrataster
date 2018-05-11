@@ -225,14 +225,14 @@ end
 ### `http` resource
 
 `http` resource tests HTTP response when sending HTTP request.
-It accepts `method`, `params` and `header` as options.
+It accepts `method`, `params`, `body` and `header` as options.
 
 ```ruby
 describe server(:app) do
   describe http(
     'http://app.example.com',
     method: :post,
-    params: {'foo' => 'bar'},
+    body: {'foo' => 'bar'},
     headers: {'USER' => 'VALUE'}
   ) do
     it "responds with content including 'app'" do
